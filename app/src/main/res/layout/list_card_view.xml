@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+
+
+        android:elevation="7dp"
+        card_view:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+         android:layout_margin="5dp"
+
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="match_parent"
+
+            android:transitionName="@string/transition_image"
+            android:layout_height="wrap_content"
+
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:text="Tema XYZ"
+
+                        android:textSize="18sp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toLeftOf="@+id/tv_suscriptors"
+                        android:layout_toStartOf="@+id/tv_suscriptors"
+                        android:gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:lines="1" />
+
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        card_view:srcCompat="@drawable/ic_calendar"
+                        android:id="@+id/imageView"
+                        android:adjustViewBounds="true"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_suscriptors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+
+                        android:gravity="right|center_horizontal"
+                        android:singleLine="false"
+                        android:text="01/01/2000"
+
+                        android:textSize="15sp"
+                        android:textColor="@color/colorAccent"
+
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/imageView"
+                        android:layout_marginRight="5dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:singleLine="false"
+                    android:text="Categoria"
+
+                    android:textSize="14sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

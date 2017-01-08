@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="xyz.leosap.rappiprueba.activities.DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text="url"
+
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_toLeftOf="@+id/tv_suscriptors"
+                android:layout_toStartOf="@+id/tv_suscriptors"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:lines="1" />
+
+            <ImageView
+                android:layout_height="wrap_content"
+
+                android:id="@+id/imageView"
+                android:adjustViewBounds="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_people"
+                android:layout_width="15dp" />
+
+            <TextView
+                android:id="@+id/tv_suscriptors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+
+                android:gravity="right|center_horizontal"
+                android:singleLine="false"
+                android:text="123456"
+
+                android:textSize="15sp"
+                android:textColor="@color/colorAccent"
+
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/imageView"
+                android:layout_marginRight="5dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:singleLine="false"
+            android:text="Descripcion"
+
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="15dp" />
+        <TextView
+            android:id="@+id/tv_desc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:singleLine="false"
+            android:text="Descripcion"
+
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="5dp"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/tv_desc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:singleLine="false"
+            android:text="Descripcion"
+
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="5dp"
+            android:visibility="gone" />
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wv_desc"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
