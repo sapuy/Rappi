@@ -27,9 +27,10 @@ import xyz.leosap.rappiprueba.models.Tema;
 
 public class SplashActivity extends AppCompatActivity {
 
-    TextView tv1, tv2;
-    ImageView iv1;
-    boolean connected;
+    private TextView tv1;
+    private TextView tv2;
+    private ImageView iv1;
+    private boolean connected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
         animacion();
     }
 
-    public void animacion() {
+    private void animacion() {
         Animation anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
         anim.setDuration(2000);
         tv1.startAnimation(anim);//aparecemos el primer titulo
@@ -123,7 +124,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
 
                 db.close();
-                if(connected)//Si el flag es verdaddero, abrimos el activity principal
+                if (connected)//Si el flag es verdaddero, abrimos el activity principal
                     goMain();
 
             }

@@ -2,28 +2,24 @@ package xyz.leosap.rappiprueba.activities;
 
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
-import android.view.View;
 
 import java.util.ArrayList;
 
 import xyz.leosap.rappiprueba.R;
 import xyz.leosap.rappiprueba.adapters.adapterCardView;
-import xyz.leosap.rappiprueba.common.Constants;
 import xyz.leosap.rappiprueba.common.Functions;
 import xyz.leosap.rappiprueba.models.Tema;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private boolean doubleBack = false;
 
     @Override
@@ -57,36 +53,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void cargaInicial() {
+    private void cargaInicial() {
         SQLiteDatabase db = Functions.getDB(getApplicationContext());
 
-        final ArrayList<Tema> list= Tema.getAll(db);
-        adapterCardView adapter_card = new adapterCardView(MainActivity.this,list);
+        final ArrayList<Tema> list = Tema.getAll(db);
+        adapterCardView adapter_card = new adapterCardView(MainActivity.this, list);
 
         recyclerView.setAdapter(adapter_card);
 
     }
+
     @Override
     public void onBackPressed() {
 
-            if (doubleBack) {
-                System.gc();
-                finish();
-                return;
-            }
-            this.doubleBack = true;
-            Snackbar snack = Snackbar.make(findViewById(R.id.content_main), R.string.double_back_exit, Snackbar.LENGTH_SHORT);
-            snack.setCallback(new Snackbar.Callback() {
-                @Override
-                public void onDismissed(Snackbar snackbar, int event) {
-                    if (event == Snackbar.Callback.DISMISS_EVENT_TIMEOUT) {
-                        doubleBack = false;
-                    }
-
+        if (doubleBack) {
+            System.gc();
+            finish();
+            return;
+        }
+        this.doubleBack = true;
+        Snackbar snack = Snackbar.make(findViewById(R.id.content_main), R.string.double_back_exit, Snackbar.LENGTH_SHORT);
+        snack.setCallback(new Snackbar.Callback() {
+            @Override
+            public void onDismissed(Snackbar snackbar, int event) {
+                if (event == Snackbar.Callback.DISMISS_EVENT_TIMEOUT) {
+                    doubleBack = false;
                 }
-            });
-            snack.show();
 
+            }
+        });
+        snack.show();
 
 
     }

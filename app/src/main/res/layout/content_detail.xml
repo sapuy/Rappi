@@ -9,11 +9,11 @@
     tools:showIn="@layout/activity_detail">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_height="match_parent">
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
 
         <RelativeLayout
@@ -28,44 +28,44 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
 
-                android:singleLine="true"
-                android:ellipsize="end"
-                android:text="url"
 
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimary"
-                android:layout_toLeftOf="@+id/tv_suscriptors"
-                android:layout_toStartOf="@+id/tv_suscriptors"
-                android:gravity="center_vertical"
                 android:layout_marginRight="10dp"
-                android:lines="1" />
+                android:layout_toLeftOf="@+id/tv_suscriptors"
+
+                android:layout_toStartOf="@+id/tv_suscriptors"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="url"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
 
             <ImageView
-                android:layout_height="wrap_content"
-
                 android:id="@+id/imageView"
-                android:adjustViewBounds="true"
-                android:layout_centerVertical="true"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_people"
-                android:layout_width="15dp" />
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/image_desc"
+                android:src="@drawable/ic_people" />
 
             <TextView
                 android:id="@+id/tv_suscriptors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+
                 android:layout_gravity="right|center_vertical"
 
-                android:gravity="right|center_horizontal"
-                android:singleLine="false"
-                android:text="123456"
+                android:layout_marginRight="5dp"
 
-                android:textSize="15sp"
-                android:textColor="@color/colorAccent"
-
-                android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/imageView"
-                android:layout_marginRight="5dp" />
+                android:gravity="right|center_horizontal"
+
+                android:text="123456"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
         </RelativeLayout>
 
         <TextView
@@ -74,24 +74,24 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
 
-            android:singleLine="false"
-            android:text="Descripcion"
 
-            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+
+            android:text="Descripcion"
             android:textColor="@color/colorAccent"
-            android:layout_marginTop="15dp" />
+            android:textSize="15sp" />
         <TextView
             android:id="@+id/tv_desc1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
 
-            android:singleLine="false"
-            android:text="Descripcion"
 
-            android:textSize="15sp"
-            android:textColor="@color/colorAccent"
             android:layout_marginTop="5dp"
+
+            android:text="Descripcion"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
             android:visibility="gone" />
         <TextView
             android:id="@+id/tv_desc2"
@@ -99,18 +99,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
 
-            android:singleLine="false"
-            android:text="Descripcion"
 
-            android:textSize="15sp"
-            android:textColor="@color/colorAccent"
             android:layout_marginTop="5dp"
+
+            android:text="Descripcion"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
             android:visibility="gone" />
 
         <WebView
+            android:id="@+id/wv_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/wv_desc"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="5dp" />
 

@@ -8,41 +8,42 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@color/colorBack"
+
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="xyz.leosap.rappiprueba.activities.SplashActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/icon"
-            android:id="@+id/imageView2"
-            android:adjustViewBounds="true"
             android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp" />
+            android:layout_marginRight="60dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/image_desc"
+            app:srcCompat="@drawable/ic_icon" />
 
         <TextView
-            android:text="@string/app_name"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
+            android:text="@string/app_name"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp" />
 
         <TextView
-            android:text="@string/tv_2"
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
             android:gravity="center_horizontal"
+            android:text="@string/tv_2"
             android:textColor="@color/colorAccent" />
 
     </LinearLayout>

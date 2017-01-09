@@ -35,30 +35,12 @@ import xyz.leosap.rappiprueba.models.Tema;
 public class adapterCardView extends RecyclerView.Adapter<adapterCardView.MyViewHolder> {
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tv1, tv2, tv3;
-        public ImageView iv1;
-        public CardView cv;
-
-        public MyViewHolder(View view) {
-            super(view);
-
-            tv1 = (TextView) view.findViewById(R.id.tv_title);
-            tv2 = (TextView) view.findViewById(R.id.tv_desc);
-            tv3 = (TextView) view.findViewById(R.id.tv_suscriptors);
-            iv1 = (ImageView) view.findViewById(R.id.iv_icon);
-            cv = (CardView) view.findViewById(R.id.card_view);
-        }
-    }
-
-    private Context context;
-    private ArrayList<Tema> temas;
-
+    private final Context context;
+    private final ArrayList<Tema> temas;
     public adapterCardView(Context context, ArrayList<Tema> temas) {
         this.context = context;
         this.temas = temas;
     }
-
 
     @Override
     public adapterCardView.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -78,11 +60,11 @@ public class adapterCardView extends RecyclerView.Adapter<adapterCardView.MyView
         holder.tv2.setText(Functions.cleanContent(tema.getPublicDescription()));
         holder.tv3.setText(Functions.epochToDate(tema.getCreated()));
 
-        String img=tema.getIconImg();
-        if(Constants.debug) Log.d("LS img icon", "--> "+tema.getIconImg());
-        if (img.equalsIgnoreCase("")){
-            img=tema.getHeaderImg();
-            if(Constants.debug) Log.d("LS img header", "--> "+tema.getHeaderImg());
+        String img = tema.getIconImg();
+        if (Constants.debug) Log.d("LS img icon", "--> " + tema.getIconImg());
+        if (img.equalsIgnoreCase("")) {
+            img = tema.getHeaderImg();
+            if (Constants.debug) Log.d("LS img header", "--> " + tema.getHeaderImg());
         }
 
         final String finalImg = img;
@@ -91,7 +73,7 @@ public class adapterCardView extends RecyclerView.Adapter<adapterCardView.MyView
                 .networkPolicy(NetworkPolicy.OFFLINE)
                 //.config(Bitmap.Config.RGB_565)
                 .fit()
-                .placeholder(R.drawable.icon_ph)
+                .placeholder(R.drawable.ic_icon_ph)
                 .centerInside()
                 .into(holder.iv1, new Callback() {
                     @Override
@@ -106,7 +88,7 @@ public class adapterCardView extends RecyclerView.Adapter<adapterCardView.MyView
                                 // .networkPolicy(NetworkPolicy.OFFLINE)
                                 //.config(Bitmap.Config.RGB_565)
                                 .fit()
-                                .placeholder(R.drawable.icon_ph)
+                                .placeholder(R.drawable.ic_icon_ph)
                                 .centerInside()
                                 .into(holder.iv1);
                     }
@@ -115,15 +97,15 @@ public class adapterCardView extends RecyclerView.Adapter<adapterCardView.MyView
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, DetailActivity.class);
-                intent.putExtra("id",tema.getId());
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("id", tema.getId());
                 String transitionName = context.getString(R.string.transition_image);
                 ActivityOptionsCompat options =
                         ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,
                                 holder.iv1,   // The view which starts the transition
                                 transitionName    // The transitionName of the view we’re transitioning to
                         );
-                ActivityCompat.startActivity((Activity) context, intent, options.toBundle());
+                ActivityCompat.startActivity(context, intent, options.toBundle());
 
                 //context.startActivity(intent);
 
@@ -138,5 +120,23 @@ public class adapterCardView extends RecyclerView.Adapter<adapterCardView.MyView
     @Override
     public int getItemCount() {
         return temas.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public final TextView tv1;
+        public final TextView tv2;
+        public final TextView tv3;
+        public final ImageView iv1;
+        public final CardView cv;
+
+        public MyViewHolder(View view) {
+            super(view);
+
+            tv1 = (TextView) view.findViewById(R.id.tv_title);
+            tv2 = (TextView) view.findViewById(R.id.tv_desc);
+            tv3 = (TextView) view.findViewById(R.id.tv_suscriptors);
+            iv1 = (ImageView) view.findViewById(R.id.iv_icon);
+            cv = (CardView) view.findViewById(R.id.card_view);
+        }
     }
 }

@@ -12,11 +12,9 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.view.View;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 
 /**
@@ -36,19 +34,21 @@ public class Functions {
     }
 
 
-    public static String epochToDate(Long time){
+    public static String epochToDate(Long time) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return sdf.format(new Date(time*1000));
+        return sdf.format(new Date(time * 1000));
     }
-    public static String numberToFormat(int number){
+
+    public static String numberToFormat(int number) {
         NumberFormat nf = NumberFormat.getInstance();
         return nf.format(number);
 
     }
 
-public static String cleanContent(String content){
-    return content.replace("/r/", "").replace("r/", "");
-}
+    public static String cleanContent(String content) {
+        return content.replace("/r/", "").replace("r/", "");
+    }
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     public static void showProgress(final boolean show, Context context, final View container, final View progress) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -81,7 +81,8 @@ public static String cleanContent(String content){
             container.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
-    public static SQLiteDatabase getDB(Context context){
+
+    public static SQLiteDatabase getDB(Context context) {
         SQLHelper admin = new SQLHelper(context, "ls_rappi", Constants.versionDB);
         return admin.getWritableDatabase();
 

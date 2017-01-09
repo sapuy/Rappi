@@ -15,7 +15,7 @@ import com.squareup.picasso.Transformation;
 
 public class BlurTransformation implements Transformation {
 
-    RenderScript rs;
+    private final RenderScript rs;
 
     public BlurTransformation(Context context) {
         super();
@@ -36,7 +36,7 @@ public class BlurTransformation implements Transformation {
         script.setInput(input);
 
         // Set the blur radius
-        script.setRadius(10);
+        script.setRadius(12);
 
         // Start the ScriptIntrinisicBlur
         script.forEach(output);
